@@ -1,10 +1,13 @@
 
 import React from 'react'
+import ItemList from './ItemList'
+import shopCSS from './shop.module.css'
 
 export default function Shop() {
   return (
-        <>
-            <p>Hi, I am Popeye! I love to eat Spinach!</p>
-        </>
+        <div className={shopCSS.shopListContainer}>
+            <p>Welcome to the store!</p>
+            <ItemList/>
+        </div>
     );
 }

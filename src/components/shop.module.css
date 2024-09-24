@@ -1,0 +1,16 @@
+
+.card {
+	border: solid black;
+	width: 300px;
+}
+
+.amountInput {
+	width: 30px;
+}
+
+.shopListContainer {
+	background-color: lightblue;
+	width: 60vw;
+	margin: auto;
+}
+

@@ -12,7 +12,7 @@ export default function Cart() {
             return acc + totalItemCost
         }, 0)
 
-        return total
+        return total.toFixed(2)
     }
 
     function cartSize() {

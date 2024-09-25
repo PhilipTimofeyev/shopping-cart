@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
-import navbar from './navbar.module.css'
+import styles from './navbar.module.css'
 // import Cart from '../Cart'
 import { useContext } from 'react';
 import { CartContext } from '../../App';
@@ -10,12 +10,10 @@ const Navbar = () => {
     const {cart, setCart} = useContext(CartContext)
     
     return (
-        <div className={navbar.container}>
-            <div>
+        <div className={styles.container}>
                 <Link to="/">Home</Link>
                 <Link to="/shop">Shop</Link>
-                <Link to="/cart">Cart {Object.keys(cart).length}</Link>
-            </div>
+                <Link to="/cart">Cart ({Object.keys(cart).length})</Link>
         </div>
     )
 

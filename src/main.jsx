@@ -9,6 +9,7 @@ import {
 import App from './App.jsx'
 import Shop from "./components/Shop";
 import Cart from './components/Cart'
+import Homepage from './components/homepage/Homepage';
 
 
 const router = createBrowserRouter([
@@ -16,14 +17,11 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />, 
     children: [
+      { path: "/", element: <Homepage /> },
       { path: "shop", element: <Shop/> },
       { path: "cart", element: <Cart /> },
     ],
   },
-  {
-    path: "hmm",
-    element: <Shop/>
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

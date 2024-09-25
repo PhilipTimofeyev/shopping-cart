@@ -8,7 +8,6 @@
     margin-top: 2vh;
     background-color: rgb(219, 203, 236);
     height: 5vh;
-    /* gap: 30px; */
     border-radius: 10px;
 }
 
@@ -16,14 +15,10 @@
     background-color: red;
 }
 
-a {
-    font-size: 1.3em;
-    color: rgb(63, 10, 58);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-button {
+.navButtons {
     padding: 10px 20px;
     border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(63, 10, 58);
 }

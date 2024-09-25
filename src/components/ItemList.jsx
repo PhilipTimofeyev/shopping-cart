@@ -14,8 +14,6 @@ export default function ItemList () {
 
 	return (
 		<>
-		<h3>List of Items</h3>
-			{/* <Item/> */}
 			<div className={shopCSS.cardsContainer}>
 			{products.map(product => (
 				<div key = {product.id}>{<Item product={product}/>}</div>

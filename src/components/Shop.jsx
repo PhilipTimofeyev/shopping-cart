@@ -1,14 +1,12 @@
 
-import {React, useEffect, useState} from 'react'
+import {React} from 'react'
 import ItemList from './ItemList'
-import shopCSS from './shop.module.css'
-import { useContext } from 'react';
+import styles from './shop.module.css'
 
 export default function Shop() {
-    // const [cart, setCart] = useContext(MyContext)
   return (
-        <div className={shopCSS.shopListContainer}>
-            <p>Welcome to the store!</p>
+      <div className={styles.shopListContainer}>
+            <h2>Welcome to the store!</h2>
             <ItemList/>
         </div>
     );

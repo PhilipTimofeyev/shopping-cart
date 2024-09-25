@@ -11,14 +11,24 @@ export default function Cart() {
         })
     }
 
+    function cartTotal() {
+        let total = cart.reduce((acc, item) =>
+            acc + item.price,
+        0
+        )
+
+        return total.toFixed(2)
+    }
+
     return (
         <>
-            <span>We made it! {
+            <p>Cart Total: {cartTotal()}</p>
+            <div>{
             cart.map((item) => {
-                console.log(item.title)
+                console.log(item)
                 return <div key={item.id}><Item product={item} /></div>
             })
-            }</span>
+            }</div>
         </>
     )
 }

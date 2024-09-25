@@ -2,9 +2,10 @@
 
 .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 2vw;
     align-items: center;
-    /* padding: 20px; */
+    margin-top: 2vh;
     background-color: rgb(219, 203, 236);
     height: 5vh;
     /* gap: 30px; */
@@ -19,4 +20,10 @@ a {
     font-size: 1.3em;
     color: rgb(63, 10, 58);
     font-weight: bold;
+    text-decoration: none;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
 }

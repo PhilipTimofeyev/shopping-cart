@@ -1,0 +1,10 @@
+
+
+.mainContainer {
+    /* background-color: aquamarine; */
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    justify-content: center;
+}

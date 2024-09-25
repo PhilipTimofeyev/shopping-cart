@@ -11,9 +11,9 @@ const Navbar = () => {
     
     return (
         <div className={styles.container}>
-                <Link to="/">Home</Link>
-                <Link to="/shop">Shop</Link>
-                <Link to="/cart">Cart ({Object.keys(cart).length})</Link>
+            <button><Link to="/">Home</Link></button>
+            <button><Link to="/shop">Shop</Link></button>
+            <button><Link to="/cart">Cart ({Object.keys(cart).length})</Link></button>
         </div>
     )
 

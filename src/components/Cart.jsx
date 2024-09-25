@@ -15,11 +15,15 @@ export default function Cart() {
         return total
     }
 
+    function cartSize() {
+        return Object.keys(cart).length
+    }
+
     return (
         <>
             <p>Cart Total: {cartTotal()}</p>
             <div>{
-            Object.entries(cart).map(([id, product]) => {
+            cartSize() > 0 && Object.entries(cart).map(([id, product]) => {
                 return <div key={id}><Item product={product.item} /></div>
             })
             }</div>

@@ -5,28 +5,22 @@ import Item from './Item'
 export default function Cart() {
     const { cart, setCart } = useContext(CartContext)
 
-    function showCart() {
-        cart.map((item) => {
-            return <p>Yay</p>
-        })
-    }
-
     function cartTotal() {
-        let total = cart.reduce((acc, item) =>
-            acc + item.price,
-        0
-        )
+        const total = Object.values(cart).reduce((acc, product) => {
+            const totalItemCost = product.item.price * product.amount;
+            console.log(product)
+            return acc + totalItemCost
+        }, 0)
 
-        return total.toFixed(2)
+        return total
     }
 
     return (
         <>
             <p>Cart Total: {cartTotal()}</p>
             <div>{
-            cart.map((item) => {
-                console.log(item)
-                return <div key={item.id}><Item product={item} /></div>
+            Object.entries(cart).map(([id, product]) => {
+                return <div key={id}><Item product={product.item} /></div>
             })
             }</div>
         </>

@@ -1,7 +1,19 @@
 import React from 'react'
 import shopCSS from './shop.module.css'
+import { useState, useContext } from 'react';
+import { CartContext } from '../App';
 
 export default function Item ({product}) {
+	const {cart, setCart} = useContext(CartContext)
+
+	function addToCart (item) {
+		setCart(
+			[
+				...cart, item
+			]
+		)
+		console.log(cart)
+	}
 
 
 	return (
@@ -10,7 +22,7 @@ export default function Item ({product}) {
 			<img src={product.image} alt={"placeholder text"} />
 			<label htmlFor="">Amount: </label>
 			<input type="number" className={shopCSS.amountInput}/>
-			<button>Add to Cart </button>
+			<button onClick={() => addToCart(product)} >Add to Cart </button>
 		</div>
 		)
 }

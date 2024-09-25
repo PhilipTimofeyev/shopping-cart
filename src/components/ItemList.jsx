@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import Item from './Item'
+import shopCSS from './shop.module.css'
 
 export default function ItemList () {
 
@@ -15,20 +16,12 @@ export default function ItemList () {
 		<>
 		<h3>List of Items</h3>
 			{/* <Item/> */}
+			<div className={shopCSS.cardsContainer}>
 			{products.map(product => (
 				<div key = {product.id}>{<Item product={product}/>}</div>
 			))
 			}
+			</div>
 		</>
 		)
-}
-
-
-const Products = () => {
-
-	// useEffect(() => {
-	// 	fetch('https://fakestoreapi.com/products')
-	// 		.then(res => res.json())
-	// 		.then(setProducts(json))
-	// }, [])
 }

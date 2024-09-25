@@ -14,3 +14,13 @@
 	margin: auto;
 }
 
+img {
+	width: 200px;
+	height: auto;
+}
+
+.cardsContainer {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(250px, 1fr));
+	padding: 50px
+}

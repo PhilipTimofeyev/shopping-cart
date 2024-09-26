@@ -1,0 +1,26 @@
+
+
+.cartCard {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border: solid rebeccapurple 3px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto
+
+    /* background-color: red; */
+}
+
+.cartCard > div {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.cartCard img {
+    width: 100px;
+    
+}

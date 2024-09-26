@@ -6,7 +6,7 @@ import styles from './shop.module.css'
 export default function Shop() {
   return (
       <div className={styles.shopListContainer}>
-            <h2>Welcome to the store!</h2>
+            <h2>Products</h2>
             <ItemList/>
         </div>
     );

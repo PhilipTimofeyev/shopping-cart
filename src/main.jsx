@@ -10,14 +10,16 @@ import App from './App.jsx'
 import Shop from "./components/Shop";
 import Cart from './components/Cart'
 import Homepage from './components/homepage/Homepage';
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />, 
+    errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Homepage /> },
+      { index: true, element: <Homepage /> },
       { path: "shop", element: <Shop/> },
       { path: "cart", element: <Cart /> },
     ],

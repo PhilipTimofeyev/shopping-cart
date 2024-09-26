@@ -1,6 +1,6 @@
-import React from 'react'
+import { React, useContext } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Cart.module.css'
-import { useState, useContext } from 'react';
 import { CartContext } from '../../App';
 
 export default function CartItem({ product, amount }) {
@@ -28,3 +28,8 @@ export default function CartItem({ product, amount }) {
         </div>
     )
 }
+
+CartItem.propTypes = {
+    product: PropTypes.object,
+    amount: PropTypes.number
+};

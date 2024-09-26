@@ -1,6 +1,6 @@
-import React from 'react'
+import { React, useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 import styles from '../Shop/shop.module.css'
-import { useState, useContext } from 'react';
 import { CartContext } from '../../App';
 
 export default function Item({ product, setShowPopup }) {
@@ -19,7 +19,6 @@ export default function Item({ product, setShowPopup }) {
 		setTimeout(() => {
 			setShowPopup(false);
 		}, 1500);
-
 	}
 
 	return (
@@ -34,7 +33,13 @@ export default function Item({ product, setShowPopup }) {
 					<input type="number" min="1" defaultValue="1" className={styles.amountInput} onChange={e => setAmount(Number(e.target.value))}/>
 				</div>
 				<button className={styles.addCartBtn} onClick={() => addToCart(product)} >Add to Cart </button>
+
 			</div>
 		</div>
 		)
 }
+
+Item.propTypes = {
+	product: PropTypes.object,
+	setShowPopup: PropTypes.func
+};

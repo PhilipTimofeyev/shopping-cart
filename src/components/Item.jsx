@@ -9,8 +9,12 @@ export default function Item ({product}) {
 	const [amount, setAmount] = useState(1)
 
 	function addToCart (item) {
-		setCart({ ...cart, [item.id]: { item: item, amount: amount } })
-		console.log(cart)
+		if (item.id in cart) {
+			const currentAmount = cart[item.id].amount
+			setCart({ ...cart, [item.id]: { item: item, amount: amount + currentAmount } })
+		} else {
+			setCart({ ...cart, [item.id]: { item: item, amount: amount } })
+		}
 	}
 
 	function handleSubmit(e) {

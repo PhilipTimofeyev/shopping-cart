@@ -23,11 +23,11 @@ export default function Cart() {
         <>  
             {!cartSize() && <h2>Cart is empty!</h2>}
             <div>{
-            cartSize() > 0 && Object.entries(cart).map(([id, product]) => {
-                return <div key={id}><CartItem product={product.item} amount={product.amount} /></div>
-            })
+                cartSize() > 0 && Object.entries(cart).map(([id, product]) => {
+                    return <div key={id}><CartItem product={product.item} amount={product.amount} /></div>
+                })
             }</div>
-            {cartSize() && <h2>Cart Total: ${cartTotal()}</h2>}
+            {cartSize() > 0 && <h2>Cart Total: ${cartTotal()}</h2>}
         </>
     )
 }

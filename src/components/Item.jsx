@@ -3,9 +3,8 @@ import styles from './shop.module.css'
 import { useState, useContext } from 'react';
 import { CartContext } from '../App';
 
-export default function Item ({product}) {
+export default function Item({ product, setShowPopup }) {
 	const {cart, setCart} = useContext(CartContext)
-
 	const [amount, setAmount] = useState(1)
 
 	function addToCart (item) {
@@ -15,13 +14,13 @@ export default function Item ({product}) {
 		} else {
 			setCart({ ...cart, [item.id]: { item: item, amount: amount } })
 		}
-	}
+		setShowPopup(true)
 
-	function handleSubmit(e) {
-		Event.preventDefault()
-		console.log(e.target.value)
-	}
+		setTimeout(() => {
+			setShowPopup(false);
+		}, 1500);
 
+	}
 
 	return (
 		<div className={styles.card}>

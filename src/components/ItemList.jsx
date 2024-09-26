@@ -6,11 +6,11 @@ export default function ItemList () {
 	const [products, setProducts] = useState([])
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState(null)
+	const [showPopup, setShowPopup] = useState(false);
 
 	useEffect(() => {
 		const dataFetch = async () => {
 			setIsLoading(true)
-			
 			try {
 				const response = await fetch('https://fakestoreapi.com/products')
 				if (!response.ok) {
@@ -29,11 +29,12 @@ export default function ItemList () {
 
 	return (
 		<>
+			{showPopup && <h2>Added to Cart!</h2>}
 			{isLoading && <h2>Loading...</h2>}
 			{error && <h2 style={{ color: "red" }}>Error: {error.message}</h2>}
 			<div className={styles.cardsContainer}>
 				{products.map(product => (
-					<div key = {product.id}>{<Item product={product}/>}</div>
+					<div key={product.id}>{<Item product={product} setShowPopup={setShowPopup}/>}</div>
 				))
 				}
 			</div>

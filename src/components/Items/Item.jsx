@@ -23,6 +23,13 @@ export default function Item({ product, setShowPopup }) {
 		// }, 1500);
 	}
 
+	function removeFromCart() {
+		const newCart = { ...cart }
+		delete newCart[product.id]
+
+		setCart(newCart)
+	}
+
 	function inCart() {
 		return product.id in cart
 	}
@@ -35,11 +42,14 @@ export default function Item({ product, setShowPopup }) {
 			<details>{product.description}</details>
 			<h3>Price: ${product.price}</h3>
 			<div className={styles.addCart}>
+				{!inCart() && 
 				<div>
 					<label htmlFor="">Quantity: </label>
 					<input type="number" min="1" defaultValue="1" className={styles.amountInput} onChange={e => setAmount(Number(e.target.value))}/>
 				</div>
-				<button className={styles.addCartBtn} onClick={() => addToCart(product)} >Add to Cart </button>
+				}
+				{inCart() && <button className={styles.addCartBtn} onClick={() => removeFromCart()} >Remove from Cart </button>}
+				{!inCart() && <button className={styles.addCartBtn} onClick={() => addToCart(product)} >Add to Cart </button>}
 			</div>
 		</div>
 		)

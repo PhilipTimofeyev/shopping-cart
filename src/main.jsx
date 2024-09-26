@@ -8,8 +8,8 @@ import {
 
 import App from './App.jsx'
 import Shop from "./components/Shop/Shop";
-import Cart from './components/Cart/Cart'
-import Homepage from './components/Homepage/Homepage.jsx';
+import Cart from './components/cart/Cart'
+import Homepage from './components/homepage/Homepage.jsx';
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
 

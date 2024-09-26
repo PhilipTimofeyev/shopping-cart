@@ -7,9 +7,15 @@ export default function ItemList () {
 	const [products, setProducts] = useState([])
 
 	useEffect(() => {
-		fetch('https://fakestoreapi.com/products')
-			.then(response => response.json())
-			.then(response => setProducts(response))
+		const dataFetch = async () => {
+			const data = await (
+				await fetch(
+					'https://fakestoreapi.com/products',
+				)
+			).json();
+			setProducts(data)
+		};
+		dataFetch()
 	}, [])
 
 	return (

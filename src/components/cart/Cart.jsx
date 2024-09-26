@@ -8,7 +8,6 @@ export default function Cart() {
     function cartTotal() {
         const total = Object.values(cart).reduce((acc, product) => {
             const totalItemCost = product.item.price * product.amount;
-            console.log(product)
             return acc + totalItemCost
         }, 0)
 

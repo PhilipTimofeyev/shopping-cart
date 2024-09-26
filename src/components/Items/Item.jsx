@@ -2,6 +2,7 @@ import { React, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../Shop/shop.module.css'
 import { CartContext } from '../../App';
+import checkmark from "../../assets/checkmark.svg";
 
 export default function Item({ product, setShowPopup }) {
 	const {cart, setCart} = useContext(CartContext)
@@ -14,16 +15,22 @@ export default function Item({ product, setShowPopup }) {
 		} else {
 			setCart({ ...cart, [item.id]: { item: item, amount: amount } })
 		}
-		setShowPopup(true)
+		// setShowPopup(true)
+		// setInCart(true)
 
-		setTimeout(() => {
-			setShowPopup(false);
-		}, 1500);
+		// setTimeout(() => {
+		// 	setShowPopup(false);
+		// }, 1500);
+	}
+
+	function inCart() {
+		return product.id in cart
 	}
 
 	return (
 		<div className={styles.card}>
 			<h2>{product.title}</h2>
+			{inCart() && <img className={styles.checkmark} src={checkmark} alt="" />}
 			<img src={product.image} alt={"placeholder text"} />
 			<details>{product.description}</details>
 			<h3>Price: ${product.price}</h3>
@@ -33,7 +40,6 @@ export default function Item({ product, setShowPopup }) {
 					<input type="number" min="1" defaultValue="1" className={styles.amountInput} onChange={e => setAmount(Number(e.target.value))}/>
 				</div>
 				<button className={styles.addCartBtn} onClick={() => addToCart(product)} >Add to Cart </button>
-
 			</div>
 		</div>
 		)

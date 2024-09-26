@@ -20,13 +20,14 @@ export default function Cart() {
     }
 
     return (
-        <>
+        <>  
+            {!cartSize() && <h2>Cart is empty!</h2>}
             <div>{
             cartSize() > 0 && Object.entries(cart).map(([id, product]) => {
                 return <div key={id}><CartItem product={product.item} amount={product.amount} /></div>
             })
             }</div>
-            <h2>Cart Total: ${cartTotal()}</h2>
+            {cartSize() && <h2>Cart Total: ${cartTotal()}</h2>}
         </>
     )
 }

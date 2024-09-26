@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect, useState, useRef } from 'react'
 import Item from './Item'
 import styles from './shop.module.css'
 
@@ -7,6 +7,7 @@ export default function ItemList () {
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState(null)
 	const [showPopup, setShowPopup] = useState(false);
+	let productRef = useRef(null)
 
 	useEffect(() => {
 		const dataFetch = async () => {
@@ -18,6 +19,8 @@ export default function ItemList () {
 				}
 				const jsonData = await response.json();
 				setProducts(jsonData);
+				productRef.current = jsonData
+
 			} catch (err) {
 				setError(err);
 			} finally {
@@ -27,10 +30,23 @@ export default function ItemList () {
 		dataFetch()
 	}, [])
 
+	function handleChange(e) {
+		const searchQuery = e.target.value
+		const newProductList = productRef.current.filter((product) => {
+			console.log(searchQuery)
+			return product.title.includes(searchQuery)
+		})
+		setProducts(newProductList)
+	}
+
 	return (
 		<>
 			{showPopup && <h2>Added to Cart!</h2>}
 			{isLoading && <h2>Loading...</h2>}
+			<div className={styles.search}>
+				<label>Search Products:</label>
+				<input type="search" onChange={handleChange}></input>
+			</div>
 			{error && <h2 style={{ color: "red" }}>Error: {error.message}</h2>}
 			<div className={styles.cardsContainer}>
 				{products.map(product => (

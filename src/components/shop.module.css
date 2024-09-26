@@ -55,6 +55,15 @@ label {
 	font-size: 1.1em;
 }
 
+.search {
+	display: flex;
+	gap: 10px;
+	padding-top: 40px;
+	font-weight: bold;
+	justify-content: center;
+	font-size: 1.5em;
+}
+
 .addCartBtn {
 	padding: 5px 10px;
 	border-radius: 5px;

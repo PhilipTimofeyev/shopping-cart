@@ -1,6 +1,6 @@
 
 import {React} from 'react'
-import ItemList from './ItemList'
+import ItemList from '../Items/ItemList'
 import styles from './shop.module.css'
 
 export default function Shop() {

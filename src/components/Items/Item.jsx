@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './shop.module.css'
+import styles from '../Shop/shop.module.css'
 import { useState, useContext } from 'react';
-import { CartContext } from '../App';
+import { CartContext } from '../../App';
 
 export default function Item({ product, setShowPopup }) {
 	const {cart, setCart} = useContext(CartContext)

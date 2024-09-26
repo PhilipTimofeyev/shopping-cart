@@ -1,6 +1,6 @@
 import { React, useEffect, useState, useRef } from 'react'
 import Item from './Item'
-import styles from './shop.module.css'
+import styles from '../Shop/shop.module.css'
 
 export default function ItemList () {
 	const [products, setProducts] = useState([])

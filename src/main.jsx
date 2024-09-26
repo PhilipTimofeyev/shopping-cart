@@ -7,9 +7,9 @@ import {
 } from "react-router-dom";
 
 import App from './App.jsx'
-import Shop from "./components/Shop";
-import Cart from './components/Cart'
-import Homepage from './components/homepage/Homepage';
+import Shop from "./components/Shop/Shop";
+import Cart from './components/Cart/Cart.jsx'
+import Homepage from './components/Homepage/Homepage.jsx';
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
 
